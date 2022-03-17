@@ -1,7 +1,7 @@
-const { expect } = require("chai");
+const { expect, assert } = require("chai");
 const { ethers, upgrades} = require("hardhat");
 
-describe("Box", function () {
+describe("==== Box ====", function () {
   before(async function () {
 
     const box = await ethers.getContractFactory("Box");
@@ -15,26 +15,11 @@ describe("Box", function () {
 
   });
 
-  it("Should return the new greeting once it's changed", async function () {
-    const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
-    await greeter.deployed();
-
-    expect(await greeter.greet()).to.equal("Hello, world!");
-
-    const setGreetingTx = await greeter.setGreeting("Hola, mundo!");
-
-    // wait until the transaction is mined
-    await setGreetingTx.wait();
-
-    expect(await greeter.greet()).to.equal("Hola, mundo!");
-  });
-
   it("testValue", async function(){
     await this.instance.setValue(3);
     let value = await this.instance.getValue();
     console.log(value);
-    expect(await this.instance.getValue()).equals(3);
+    assert.equal(await this.instance.getValue(), 3);
   });
 
 });
