@@ -95,7 +95,7 @@ task("fromKeystore", "decrypt a keystore file")
 //   solidity: "0.8.4",
 // };
 module.exports = {
-  // defaultNetwork: "develop",
+//   defaultNetwork: "develop",
   networks: {
       hardhat: {
           chainId: 31337,

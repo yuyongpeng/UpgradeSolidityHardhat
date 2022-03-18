@@ -1,7 +1,8 @@
 // scripts/upgrade_box.js
 const { ethers, upgrades } = require("hardhat");
 
-const proxyAddress = "0x0C6bFa8107804bC72dDBCa761F1d1BD9BABc9A88";
+// 代理协约地址
+const proxyAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 async function main() {
   const box = await ethers.getContractFactory("Box");

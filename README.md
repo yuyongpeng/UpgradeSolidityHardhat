@@ -23,8 +23,10 @@ $ npx hardhat compile
 ```
 # 部署3个协约 ProxyAdmin.sol  TransparentUpgradeableProxy.sol  用户的协约.sol
 $ npx hardhat run scripts/deploy.js
-# 升级用户协约。调用ProxyAdmin.sol的方法。
+# 升级用户协约。调用ProxyAdmin.sol的方法。(需要修改upgrade.js文件的 proxyAddress的参数)
 $ npx hardhat run scripts/upgrade.js
+// 使用hardhat自带的节点，会包如下的错误，需要使用ganache的节点不会有问题。
+// (node:78017) UnhandledPromiseRejectionWarning: Error: Contract at 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0 doesn't look like an ERC 1967 proxy with a logic contract address
 ```
 * signer(发起交易账号):                                    0x7C195d4FC1eaDe64DCfa47EF4530E080B02EEc6F
 * adminProxy(管理协约Address):                             0x7b73d1b27c04b4c616ADfF9F8EB5bd53F769d9e5
